@@ -33,25 +33,26 @@ GET /api/pages/
 
 ### Пример
 
-    curl -i -H 'Accept: application/json' http://localhost:8000/api/pages
+    curl -i -H 'Accept: application/json' http://localhost:8000/api/pages/?page=2
 
     >>>
 
-    HTTP/1.1 200 OK
-    Date: Fri, 21 Feb 2020 12:06:10 GMT
-    Server: WSGIServer/0.2 CPython/3.8.0
-    Content-Type: application/json
-    Vary: Accept, Cookie
+    HTTP 200 OK
     Allow: GET
-    X-Frame-Options: SAMEORIGIN
-    Content-Length: 2
+    Content-Type: application/json
+    Vary: Accept
 
-    [
-        {
-            "url": "http://127.0.0.1:8000/api/pages/1/",
-            "title": "Пробная страница"
-        }
-    ]
+    {
+        "count": 345,
+        "next": "http://127.0.0.1:8000/api/pages/?page=3",
+        "previous": "http://127.0.0.1:8000/api/pages/",
+        "results": [
+            {
+                "url": "http://127.0.0.1:8000/api/pages/101/",
+                "title": "Whether prevent lawyer ask left east factor."
+            },
+        ]
+    }
 
 ## Получить страницу
 
@@ -61,48 +62,39 @@ GET /api/pages/<id>/
 
 ### Пример
 
-    curl -i -H 'Accept: application/json' http://localhost:8000/api/pages/1/
+    curl -i -H 'Accept: application/json' http://localhost:8000/api/pages/101/
 
     >>>
 
-    HTTP/1.1 200 OK
-    Date: Fri, 21 Feb 2020 12:12:31 GMT
-    Server: WSGIServer/0.2 CPython/3.8.0
-    Content-Type: application/json
-    Vary: Accept, Cookie
+    HTTP 200 OK
     Allow: GET
-    X-Frame-Options: SAMEORIGIN
-    Content-Length: 540
+    Content-Type: application/json
+    Vary: Accept
 
     {
-        "url": "http://127.0.0.1:8000/api/pages/1/",
+        "url": "http://127.0.0.1:8000/api/pages/101/",
         "content": [
             {
-                "title": "Video",
+                "title": "Spring trial thus act drop guy.",
                 "pos": 0,
-                "counter": 21,
-                "path": "http://foo.bar/path/to/video",
-                "subtitle": "http://foo.bar/path/to/subtitle"
+                "counter": 0,
+                "path": "http://richardson.com/home/later.mov",
+                "subtitle": "https://price-torres.org/terms.htmanyone.srt"
             },
             {
-                "title": "Short description",
+                "title": "Ball body bill PM.",
                 "pos": 1,
-                "counter": 21,
-                "value": "Unbelievable short description.."
+                "counter": 0,
+                "path": "http://rice-cooper.com/main/about.htmlborn.mov",
+                "subtitle": "https://miller-bush.com/usually.srt"
             },
             {
-                "title": "Full description",
+                "title": "Painting staff create play this civil summer.",
                 "pos": 2,
-                "counter": 21,
-                "value": "Wow! This is really full. Please don't wast your time for reading this."
-            },
-            {
-                "title": "Audio",
-                "pos": 3,
-                "counter": 21,
-                "path": "http://foo.bar/path/to/audio",
-                "bitrate": 128000
+                "counter": 0,
+                "path": "https://leon-wilson.com/post.htmthrow.webm",
+                "subtitle": "https://www.webb-cox.net/search/go.srt"
             }
         ],
-        "title": "Пробная страница"
+        "title": "Response consider green understand stay."
     }
